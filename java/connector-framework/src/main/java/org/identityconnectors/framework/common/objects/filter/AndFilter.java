@@ -57,7 +57,9 @@ public final class AndFilter extends CompositeFilter {
     public boolean accept(final ConnectorObject obj) {
         boolean result = true;
         for (final Filter subFilter : subFilters) {
-            result = subFilter.accept(obj);
+            if (subFilter != null) {
+                result = subFilter.accept(obj);
+            }
             if (!result) {
                 break;
             }
