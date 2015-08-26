@@ -19,6 +19,7 @@
  * enclosed by brackets [] replaced by your own identifying information:
  * "Portions Copyrighted [year] [name of copyright owner]"
  * ====================
+ * Portions Copyrighted 2015 Evolveum
  */
 package org.identityconnectors.framework.common.objects;
 
@@ -69,6 +70,10 @@ public final class OperationOptionInfoBuilder {
      */
     public static OperationOptionInfo buildAttributesToGet() {
         return build(OperationOptions.OP_ATTRIBUTES_TO_GET, String[].class);
+    }
+    
+    public static OperationOptionInfo buildReturnDefaultAttributes() {
+        return build(OperationOptions.OP_RETURN_DEFAULT_ATTRIBUTES, Boolean.class);
     }
 
     public static OperationOptionInfo buildRunWithPassword() {
